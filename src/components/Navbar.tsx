@@ -107,46 +107,42 @@ export default function Navbar() {
 
       {/* Mobile menu — overlays content when open */}
       <div
-        className={`fixed inset-x-0 z-40 grid overflow-hidden border-b border-gray-100 bg-white shadow-lg transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
-          menuOpen ? "grid-rows-[1fr]" : "pointer-events-none grid-rows-[0fr]"
+        className={`fixed inset-x-0 z-40 transform-gpu border-b border-gray-100 bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
+          menuOpen
+            ? "translate-y-0"
+            : "pointer-events-none -translate-y-full"
         }`}
         style={{ top: `${NAVBAR_HEIGHT}px` }}
         aria-hidden={!menuOpen}
       >
-        <div className="min-h-0 overflow-hidden">
-          <div
-            className={`border-t border-gray-100 bg-white px-4 py-4 transition-opacity duration-300 ${
-              menuOpen ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <ul className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    tabIndex={menuOpen ? 0 : -1}
-                    className={`block rounded-lg px-3 py-2.5 text-base font-bold transition-colors ${
-                      link.active
-                        ? "bg-blue-50 text-[#0066FF]"
-                        : "text-gray-800 hover:bg-gray-50 hover:text-[#0066FF]"
-                    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="px-4 py-4">
+          <ul className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  tabIndex={menuOpen ? 0 : -1}
+                  className={`block rounded-lg px-3 py-2.5 text-base font-bold transition-colors ${
+                    link.active
+                      ? "bg-blue-50 text-[#0066FF]"
+                      : "text-gray-800 hover:bg-gray-50 hover:text-[#0066FF]"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-            <Link
-              href="#login"
-              tabIndex={menuOpen ? 0 : -1}
-              className="mt-4 flex w-full items-center justify-center rounded-lg bg-[#0066FF] px-5 py-3 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition hover:bg-[#0052cc] sm:hidden"
-              onClick={() => setMenuOpen(false)}
-            >
-              تسجيل دخول
-            </Link>
-          </div>
+          <Link
+            href="#login"
+            tabIndex={menuOpen ? 0 : -1}
+            className="mt-4 flex w-full items-center justify-center rounded-lg bg-[#0066FF] px-5 py-3 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition hover:bg-[#0052cc] sm:hidden"
+            onClick={() => setMenuOpen(false)}
+          >
+            تسجيل دخول
+          </Link>
         </div>
       </div>
     </>

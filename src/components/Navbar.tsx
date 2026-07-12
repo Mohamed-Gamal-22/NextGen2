@@ -38,15 +38,18 @@ function MenuIcon({ open }: { open: boolean }) {
   );
 }
 
+const NAVBAR_HEIGHT = 92;
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header
-      dir="rtl"
-      className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white"
-    >
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <>
+      <header
+        dir="rtl"
+        className="fixed top-0 right-0 left-0 z-50 w-full border-b border-gray-100 bg-white"
+      >
+        <nav className="mx-auto flex h-[92px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         {/* logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -97,12 +100,17 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+      </header>
 
-      {/* links in small screen */}
+      {/* Spacer — keeps content below the fixed bar only */}
+      <div aria-hidden="true" className="h-[92px] shrink-0" />
+
+      {/* Mobile menu — overlays content when open */}
       <div
-        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
-          menuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        className={`fixed inset-x-0 z-40 grid overflow-hidden border-b border-gray-100 bg-white shadow-lg transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
+          menuOpen ? "grid-rows-[1fr]" : "pointer-events-none grid-rows-[0fr]"
         }`}
+        style={{ top: `${NAVBAR_HEIGHT}px` }}
         aria-hidden={!menuOpen}
       >
         <div className="min-h-0 overflow-hidden">
@@ -141,6 +149,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

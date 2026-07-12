@@ -5,7 +5,7 @@ type BalanceCardProps = {
 export default function BalanceCard({ className = "" }: BalanceCardProps) {
   return (
     <div
-      className={`w-[210px] rounded-2xl border border-white/80 bg-white/95 p-4 shadow-xl shadow-blue-200/40 backdrop-blur-sm sm:w-[230px] lg:w-[250px] ${className}`}
+      className={`w-[210px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[230px] lg:w-[250px] ${className}`}
     >
       <p className="text-xs font-medium text-gray-400">Available Balance</p>
       <p className="mt-1 text-2xl font-bold tracking-tight text-gray-900">

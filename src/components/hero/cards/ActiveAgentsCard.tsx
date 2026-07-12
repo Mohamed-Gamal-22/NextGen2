@@ -11,14 +11,11 @@ const avatars = [
 export default function ActiveAgentsCard({ className = "" }: ActiveAgentsCardProps) {
   return (
     <div
-      className={`w-[200px] rounded-2xl border border-white/80 bg-white/95 p-4 shadow-xl shadow-blue-200/40 backdrop-blur-sm sm:w-[220px] lg:w-[240px] ${className}`}
+      className={`w-[200px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[220px] lg:w-[240px] ${className}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-          </span>
+          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-400/30" />
           <span className="text-sm font-semibold text-gray-900">Active Agents</span>
         </div>
         <span className="text-[10px] font-medium text-gray-400">Live Now</span>

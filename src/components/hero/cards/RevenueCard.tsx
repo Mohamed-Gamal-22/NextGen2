@@ -13,7 +13,7 @@ const bars = [
 export default function RevenueCard({ className = "" }: RevenueCardProps) {
   return (
     <div
-      className={`w-[200px] rounded-2xl border border-white/80 bg-white/95 p-4 shadow-xl shadow-blue-200/40 backdrop-blur-sm sm:w-[220px] lg:w-[240px] ${className}`}
+      className={`w-[200px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[220px] lg:w-[240px] ${className}`}
     >
       <div className="flex items-center justify-between">
         <span className="text-sm font-bold text-gray-900">Revenue</span>

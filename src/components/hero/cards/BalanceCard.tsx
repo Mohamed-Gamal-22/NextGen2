@@ -24,7 +24,7 @@ export default function BalanceCard({
           <span className="text-sm font-semibold text-gray-800">Azora Business</span>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-1.5">
+        <div className="flex gap-1.5">
           <div className="h-6 w-9 rounded-md bg-rose-100" />
           <div className="h-6 w-9 rounded-md bg-sky-100" />
         </div>

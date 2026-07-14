@@ -1,11 +1,15 @@
 type BalanceCardProps = {
   className?: string;
+  widthClasses?: string;
 };
 
-export default function BalanceCard({ className = "" }: BalanceCardProps) {
+export default function BalanceCard({
+  className = "",
+  widthClasses = "w-[210px] sm:w-[230px] lg:w-[250px]",
+}: BalanceCardProps) {
   return (
     <div
-      className={`w-[210px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[230px] lg:w-[250px] ${className}`}
+      className={`rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 ${widthClasses} ${className}`}
     >
       <p className="text-xs font-medium text-gray-400">Available Balance</p>
       <p className="mt-1 text-2xl font-bold tracking-tight text-gray-900">

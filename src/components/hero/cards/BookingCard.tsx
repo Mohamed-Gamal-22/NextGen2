@@ -1,11 +1,15 @@
 type BookingCardProps = {
   className?: string;
+  widthClasses?: string;
 };
 
-export default function BookingCard({ className = "" }: BookingCardProps) {
+export default function BookingCard({
+  className = "",
+  widthClasses = "w-[220px] sm:w-[240px] lg:w-[260px]",
+}: BookingCardProps) {
   return (
     <div
-      className={`w-[220px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[240px] lg:w-[260px] ${className}`}
+      className={`rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 ${widthClasses} ${className}`}
     >
       <div className="flex items-start gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0066FF] text-white">

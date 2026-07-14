@@ -41,11 +41,11 @@ export default function HeroSection() {
             <HeroContent />
           </div>
 
-          <div className="relative z-10 mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-4 sm:gap-6">
-            <BookingCard className="mx-auto w-full max-w-[220px]" />
-            <ActiveAgentsCard className="mx-auto w-full max-w-[220px]" />
-            <BalanceCard className="mx-auto w-full max-w-[220px]" />
-            <RevenueCard className="mx-auto w-full max-w-[220px]" />
+          <div className="relative z-10 mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 sm:gap-6">
+            <BookingCard className="mx-auto" widthClasses="w-full max-w-sm sm:max-w-none" />
+            <ActiveAgentsCard className="mx-auto" widthClasses="w-full max-w-sm sm:max-w-none" />
+            <BalanceCard className="mx-auto" widthClasses="w-full max-w-sm sm:max-w-none" />
+            <RevenueCard className="mx-auto" widthClasses="w-full max-w-sm sm:max-w-none" />
           </div>
         </div>
       </div>

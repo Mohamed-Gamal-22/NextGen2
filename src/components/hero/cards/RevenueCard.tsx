@@ -1,5 +1,6 @@
 type RevenueCardProps = {
   className?: string;
+  widthClasses?: string;
 };
 
 const bars = [
@@ -10,10 +11,13 @@ const bars = [
   { height: "h-16", active: true },
 ];
 
-export default function RevenueCard({ className = "" }: RevenueCardProps) {
+export default function RevenueCard({
+  className = "",
+  widthClasses = "w-[200px] sm:w-[220px] lg:w-[240px]",
+}: RevenueCardProps) {
   return (
     <div
-      className={`w-[200px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[220px] lg:w-[240px] ${className}`}
+      className={`rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 ${widthClasses} ${className}`}
     >
       <div className="flex items-center justify-between">
         <span className="text-sm font-bold text-gray-900">Revenue</span>

@@ -1,5 +1,6 @@
 type ActiveAgentsCardProps = {
   className?: string;
+  widthClasses?: string;
 };
 
 const avatars = [
@@ -8,10 +9,13 @@ const avatars = [
   "bg-amber-400",
 ];
 
-export default function ActiveAgentsCard({ className = "" }: ActiveAgentsCardProps) {
+export default function ActiveAgentsCard({
+  className = "",
+  widthClasses = "w-[200px] sm:w-[220px] lg:w-[240px]",
+}: ActiveAgentsCardProps) {
   return (
     <div
-      className={`w-[200px] rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 sm:w-[220px] lg:w-[240px] ${className}`}
+      className={`rounded-2xl border border-gray-100 bg-white p-4 shadow-lg shadow-blue-100/50 ${widthClasses} ${className}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">

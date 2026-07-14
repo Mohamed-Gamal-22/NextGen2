@@ -13,14 +13,14 @@ export default function BalanceCard({ className = "" }: BalanceCardProps) {
       </p>
 
       <div className="mt-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex  items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0066FF]/10">
             <div className="h-3 w-3 rounded-full bg-[#0066FF]" />
           </div>
           <span className="text-sm font-semibold text-gray-800">Azora Business</span>
         </div>
 
-        <div className="flex gap-1.5">
+        <div className="flex flex-col sm:flex-row gap-1.5">
           <div className="h-6 w-9 rounded-md bg-rose-100" />
           <div className="h-6 w-9 rounded-md bg-sky-100" />
         </div>

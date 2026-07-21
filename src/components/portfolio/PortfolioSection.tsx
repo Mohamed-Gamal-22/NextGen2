@@ -147,7 +147,8 @@ export default function PortfolioSection() {
   // Handle dot navigation
   const totalSteps = projects.length - visibleCards + 1;
 
-  const translatePercent = currentIndex * (100 / visibleCards);
+  const translatePercent = (currentIndex * 100) / visibleCards;
+  const translateGap = (currentIndex * 24) / visibleCards;
 
   return (
     <section
@@ -181,7 +182,7 @@ export default function PortfolioSection() {
           <div
             className={`flex gap-6 ${isDragging ? "" : "transition-transform duration-500 ease-in-out"}`}
             style={{
-              transform: `translateX(calc(${translatePercent}% + ${dragOffset}px))`,
+              transform: `translateX(calc(${translatePercent}% + ${translateGap}px + ${dragOffset}px))`,
             }}
           >
             {projects.map((project) => (
